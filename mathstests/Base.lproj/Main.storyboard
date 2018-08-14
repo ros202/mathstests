@@ -98,6 +98,7 @@
                         <viewLayoutGuide key="safeArea" id="9uD-xN-flc"/>
                     </view>
                     <connections>
+                        <outlet property="questionLabel" destination="BWj-9B-Zmr" id="doh-Kb-moS"/>
                         <outlet property="timerLabel" destination="Utw-20-sCW" id="TlF-Xd-7Ku"/>
                     </connections>
                 </viewController>

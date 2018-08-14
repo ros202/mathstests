@@ -30,15 +30,26 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    var seconds = 300
+    var seconds = 5
     var timer = Timer()
     var isTimerRunning = false
     var questionNumber: Int = 1
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
+    
+    func generateNewQuestion(){
+        let operand1 = Int.random(in: 0...12)
+        let operand2 = Int.random(in: 0...12)
+        let operand3 = operand1 * operand2
+        let operator1 = "×"
+        let operator2 = "="
+        
+        questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
+    }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
         
         //update selector to current ViewController...self
         
@@ -63,7 +74,16 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    func showAlert(){}
+    func showAlert(){
+        let title = "Well done!"
+        let attempted = questionNumber - 1
+        let message = "Your score was: \(score) / \(attempted)"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: {
+            action in self.close() /*maybe do something else later when we make a new thing*/
+        })
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
     
-    func generateNewQuestion(){}
 }
