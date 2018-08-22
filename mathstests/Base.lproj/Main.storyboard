@@ -77,6 +77,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="answerTyped:" destination="Ud1-55-yv9" eventType="primaryActionTriggered" id="ybD-zC-u1t"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utw-20-sCW">
                                 <rect key="frame" x="346" y="56" width="86" height="21"/>
@@ -99,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="questionLabel" destination="BWj-9B-Zmr" id="doh-Kb-moS"/>
+                        <outlet property="scoreLabel" destination="LfZ-FS-kkI" id="hlV-oY-2XU"/>
                         <outlet property="timerLabel" destination="Utw-20-sCW" id="TlF-Xd-7Ku"/>
                     </connections>
                 </viewController>

@@ -15,28 +15,40 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    var score: Int = 0
+    private var score: Int = 0
+    private var seconds = 10
+    private var timer = Timer()
+    private var isTimerRunning = false
+    private var questionNumber: Int = 1
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
     
     @IBAction func close() {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func startButtonTapped() {
-        if !isTimerRunning {
+        if !self.isTimerRunning {
             score = 0
-            questionNumber = 1
+            self.questionNumber = 1
             runTimer()
             generateNewQuestion()
         }
     }
     
-    var seconds = 5
-    var timer = Timer()
-    var isTimerRunning = false
-    var questionNumber: Int = 1
+    @IBAction func answerTyped(_ textField: UITextField) {
+        let givenAnswer = textField.text
+        if markAnswer(answer: givenAnswer ?? "") {
+            self.score += 1
+            scoreLabel.text = "Score: \(score)"
+        }
+        self.questionNumber += 1
+        generateNewQuestion()
+    }
     
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet var questionLabel: UILabel!
+
     
     func generateNewQuestion(){
         let operand1 = Int.random(in: 0...12)
@@ -48,12 +60,16 @@ class QuestionViewController: UIViewController {
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
     }
     
+    func markAnswer(answer: String) -> Bool {
+        return true
+    }
+    
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
         
         //update selector to current ViewController...self
         
-        isTimerRunning = true
+        self.isTimerRunning = true
     }
     
     func timeString(time:TimeInterval) -> String {
@@ -63,20 +79,20 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        if seconds < 1 {
+        if self.seconds < 1 {
             timer.invalidate()
             showAlert()
-            seconds = 300
+            self.seconds = 300
             
         } else {
-            seconds -= 1
-            timerLabel.text = timeString(time: TimeInterval(seconds))
+            self.seconds -= 1
+            timerLabel.text = timeString(time: TimeInterval(self.seconds))
         }
     }
     
     func showAlert(){
         let title = "Well done!"
-        let attempted = questionNumber - 1
+        let attempted = self.questionNumber - 1
         let message = "Your score was: \(score) / \(attempted)"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: {
