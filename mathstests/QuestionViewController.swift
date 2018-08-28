@@ -20,12 +20,31 @@ class QuestionViewController: UIViewController {
     private var timer = Timer()
     private var isTimerRunning = false
     private var questionNumber: Int = 1
+    private var correctAnswer: Int = 0
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var questionNumberLabel: UILabel!
     
-    @IBAction func close() {
+    @IBAction func confirmExit() {
+        if isTimerRunning {
+            let title = "Close?"
+            let message = "Are you sure you want to close?"
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                action in self.close() /*maybe do something else later when we make a new thing*/
+            })
+            let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            present(alert, animated: true, completion: nil)
+        } else {
+            close()
+        }
+    }
+    
+    func close(){
         dismiss(animated: true, completion: nil)
     }
     
@@ -33,6 +52,7 @@ class QuestionViewController: UIViewController {
         if !self.isTimerRunning {
             score = 0
             self.questionNumber = 1
+            
             runTimer()
             generateNewQuestion()
         }
@@ -45,20 +65,23 @@ class QuestionViewController: UIViewController {
             scoreLabel.text = "Score: \(score)"
         }
         self.questionNumber += 1
+        questionNumberLabel.text = "Question: \(questionNumber)"
         generateNewQuestion()
+        textField.text = ""
     }
 
     func generateNewQuestion(){
         let operand1 = Int.random(in: 0...12)
         let operand2 = Int.random(in: 0...12)
         let operand3 = operand1 * operand2
+        correctAnswer = operand3
         let operator1 = "×"
         let operator2 = "="
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
     }
     
     func markAnswer(answer: String) -> Bool {
-        return true
+        return answer == String(correctAnswer)
     }
     
     func runTimer() {
@@ -95,5 +118,8 @@ class QuestionViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+
     
 }
