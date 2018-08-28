@@ -16,7 +16,7 @@ class QuestionViewController: UIViewController {
     }
     
     private var score: Int = 0
-    private var seconds = 10
+    private var seconds = 20
     private var timer = Timer()
     private var isTimerRunning = false
     private var questionNumber: Int = 1
@@ -47,16 +47,13 @@ class QuestionViewController: UIViewController {
         self.questionNumber += 1
         generateNewQuestion()
     }
-    
 
-    
     func generateNewQuestion(){
         let operand1 = Int.random(in: 0...12)
         let operand2 = Int.random(in: 0...12)
         let operand3 = operand1 * operand2
         let operator1 = "×"
         let operator2 = "="
-        
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
     }
     
@@ -66,9 +63,6 @@ class QuestionViewController: UIViewController {
     
     func runTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-        
-        //update selector to current ViewController...self
-        
         self.isTimerRunning = true
     }
     
