@@ -16,7 +16,7 @@ class QuestionViewController: UIViewController {
     }
     
     private var score: Int = 0
-    private var seconds = 20
+    private var seconds = 30
     private var timer = Timer()
     private var isTimerRunning = false
     private var questionNumber: Int = 1
@@ -51,7 +51,9 @@ class QuestionViewController: UIViewController {
     @IBAction func startButtonTapped() {
         if !self.isTimerRunning {
             score = 0
+            scoreLabel.text = "Score: \(score)"
             self.questionNumber = 1
+            questionNumberLabel.text = "Question: \(questionNumber)"
             
             runTimer()
             generateNewQuestion()
@@ -121,5 +123,4 @@ class QuestionViewController: UIViewController {
     
     
 
-    
 }
