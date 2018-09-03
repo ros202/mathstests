@@ -18,21 +18,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZq-Zz-MoB">
-                                <rect key="frame" x="241.5" y="476.5" width="285" height="71"/>
+                                <rect key="frame" x="241.5" y="306" width="285" height="71"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="49"/>
                                 <state key="normal" title="Times Tables"/>
                                 <connections>
-                                    <segue destination="Ud1-55-yv9" kind="presentation" id="QC5-7k-r2y"/>
+                                    <segue destination="Ud1-55-yv9" kind="presentation" id="EOj-NX-Vzy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54f-yN-HYz">
+                                <rect key="frame" x="363" y="1606" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LyD-Hm-8K7">
+                                <rect key="frame" x="0.0" y="407" width="768" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YZq-Zz-MoB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M5Q-Cx-oGc"/>
+                            <constraint firstItem="LyD-Hm-8K7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UYa-4P-kOD"/>
+                            <constraint firstItem="LyD-Hm-8K7" firstAttribute="top" secondItem="YZq-Zz-MoB" secondAttribute="bottom" constant="30" id="Wm4-SE-ADQ"/>
+                            <constraint firstItem="YZq-Zz-MoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuC-59-IKe"/>
+                            <constraint firstItem="YZq-Zz-MoB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.33333" id="g5L-is-xfZ"/>
+                            <constraint firstItem="LyD-Hm-8K7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gWG-bs-Hfo"/>
+                            <constraint firstItem="54f-yN-HYz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="603" id="hWM-M8-KG8"/>
+                            <constraint firstItem="LyD-Hm-8K7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hwL-4C-4zc"/>
                             <constraint firstItem="YZq-Zz-MoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q20-Gi-ron"/>
+                            <constraint firstItem="LyD-Hm-8K7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qgF-rw-XF9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tablesTable" destination="LyD-Hm-8K7" id="vGK-kU-Uer"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +132,7 @@
                         <viewLayoutGuide key="safeArea" id="9uD-xN-flc"/>
                     </view>
                     <connections>
+                        <outlet property="answerField" destination="1YF-Mx-beP" id="qI4-pg-uxo"/>
                         <outlet property="questionLabel" destination="BWj-9B-Zmr" id="doh-Kb-moS"/>
                         <outlet property="questionNumberLabel" destination="Jtw-yh-k07" id="vL4-Ut-Gp2"/>
                         <outlet property="scoreLabel" destination="LfZ-FS-kkI" id="hlV-oY-2XU"/>

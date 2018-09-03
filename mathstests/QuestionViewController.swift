@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var questionNumberLabel: UILabel!
+    @IBOutlet var answerField: UITextField!
+
     
     @IBAction func confirmExit() {
         if isTimerRunning {
@@ -54,7 +56,7 @@ class QuestionViewController: UIViewController {
             scoreLabel.text = "Score: \(score)"
             self.questionNumber = 1
             questionNumberLabel.text = "Question: \(questionNumber)"
-            
+            answerField.becomeFirstResponder() 
             runTimer()
             generateNewQuestion()
         }
