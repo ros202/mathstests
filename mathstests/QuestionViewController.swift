@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.difficultyLabel.text = difficultyStringFromSegue
     }
     
     private var score: Int = 0
@@ -21,12 +22,14 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     private var isTimerRunning = false
     private var questionNumber: Int = 1
     private var correctAnswer: Int = 0
+    var difficultyStringFromSegue: String = ""
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var questionNumberLabel: UILabel!
     @IBOutlet var answerField: UITextField!
+    @IBOutlet var difficultyLabel: UILabel!
 
     
     @IBAction func confirmExit() {
@@ -75,12 +78,31 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func generateNewQuestion(){
-        let operand1 = Int.random(in: 0...12)
-        let operand2 = Int.random(in: 0...12)
-        let operand3 = operand1 * operand2
-        correctAnswer = operand3
-        let operator1 = "×"
-        let operator2 = "="
+        switch difficultyStringFromSegue {
+        case "Underling":
+            let operand1 = Int.random(in: 0...12)
+            let operand2 = Int.random(in: 0...12)
+            let operand3 = operand1 * operand2
+                correctAnswer = operand3
+            let operator1 = "×"
+            let operator2 = "="
+        case "Intermediate":
+            let questionTypeArray: Array<String> = ["×", "÷"]
+            let questionType = questionTypeArray.randomElement()
+            let operand1 = Int.random(in: 0...13)
+            let operand2 = Int.random(in: 0...13)
+            
+            
+            
+        default:
+            let operand1 = Int.random(in: 0...12)
+            let operand2 = Int.random(in: 0...12)
+            let operand3 =
+                correctAnswer = operand3
+            let operator1 = "×"
+            let operator2 = "="
+        }
+        
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
     }
     

@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="49"/>
                                 <state key="normal" title="Times Tables"/>
                                 <connections>
-                                    <segue destination="Ud1-55-yv9" kind="presentation" id="EOj-NX-Vzy"/>
+                                    <segue destination="Ud1-55-yv9" kind="presentation" identifier="difficultySelected" id="EOj-NX-Vzy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54f-yN-HYz">
@@ -122,6 +122,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWP-11-lyg">
+                                <rect key="frame" x="296" y="133" width="176" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -133,6 +140,7 @@
                     </view>
                     <connections>
                         <outlet property="answerField" destination="1YF-Mx-beP" id="qI4-pg-uxo"/>
+                        <outlet property="difficultyLabel" destination="jWP-11-lyg" id="XR0-aa-HwX"/>
                         <outlet property="questionLabel" destination="BWj-9B-Zmr" id="doh-Kb-moS"/>
                         <outlet property="questionNumberLabel" destination="Jtw-yh-k07" id="vL4-Ut-Gp2"/>
                         <outlet property="scoreLabel" destination="LfZ-FS-kkI" id="hlV-oY-2XU"/>
