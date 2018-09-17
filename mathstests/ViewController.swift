@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let indexPath = tablesTable.indexPathForSelectedRow!.row
         destinationView!.difficultyStringFromSegue = difficulties[indexPath]
         
-        
         if segue.identifier == "difficultySelected" {
             tablesTable.deselectRow(at: tablesTable.indexPathForSelectedRow!, animated: true)
         }

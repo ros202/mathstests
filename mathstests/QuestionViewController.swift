@@ -78,32 +78,51 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func generateNewQuestion(){
+        var operand1: Int
+        var operand2: Int
+        var operand3: Character
+        var operator1: String
+        var operator2: String
+        var questionTypeArray: Array<String> = ["×", "÷"]
+        var questionType: String
+
         switch difficultyStringFromSegue {
         case "Underling":
-            let operand1 = Int.random(in: 0...12)
-            let operand2 = Int.random(in: 0...12)
-            let operand3 = operand1 * operand2
-                correctAnswer = operand3
-            let operator1 = "×"
-            let operator2 = "="
+            operand1 = Int.random(in: 0...12)
+            operand2 = Int.random(in: 0...12)
+            operand3 = "?"
+            operator1 = "×"
+            operator2 = "="
+            correctAnswer = operand1 * operand2
+
         case "Intermediate":
-            let questionTypeArray: Array<String> = ["×", "÷"]
-            let questionType = questionTypeArray.randomElement()
-            let operand1 = Int.random(in: 0...13)
-            let operand2 = Int.random(in: 0...13)
-            
-            
+            questionType = questionTypeArray.randomElement()!
+            operand1 = Int.random(in: 0...13)
+            operand2 = Int.random(in: 0...13)
+            operand3 = "?"
+            operator1 = questionType
+            operator2 = "="
+            if questionType == "×" {
+                operand1 = Int.random(in: 0...13)
+                operand2 = Int.random(in: 0...13)
+                correctAnswer = operand1 * operand2
+            } else if questionType == "÷" {
+                correctAnswer = Int.random(in: 0...13)
+                operand2 = Int.random(in: 1...13)
+                operand1 = operand2 * correctAnswer
+                
+            }
             
         default:
-            let operand1 = Int.random(in: 0...12)
-            let operand2 = Int.random(in: 0...12)
-            let operand3 =
-                correctAnswer = operand3
-            let operator1 = "×"
-            let operator2 = "="
+            operand1 = Int.random(in: 0...12)
+            operand2 = Int.random(in: 0...12)
+            operand3 = "?"
+            operator1 = "×"
+            operator2 = "="
+            correctAnswer = operand1 * operand2
         }
         
-        questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2)"
+        questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2) \(operand3)"
     }
     
     func markAnswer(answer: String) -> Bool {
