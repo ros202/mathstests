@@ -44,12 +44,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.textLabel!.text = difficulties[indexPath.row]
         cell.textLabel!.textColor = colours[indexPath.row % 2]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: scaleText(80))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "difficultySelected", sender: self)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.height / CGFloat((difficulties.count + 1))
+    }
+    
+    func scaleText(_ sizeOniPad: Int) -> CGFloat {
+        return CGFloat(sizeOniPad) * UIScreen.main.bounds.width / 768.0
     }
 }
 
