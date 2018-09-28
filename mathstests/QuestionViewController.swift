@@ -14,15 +14,17 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.difficultyLabel.text = difficultyStringFromSegue
+        self.difficultyLabel.textColor = difficultyColourFromSegue
     }
     
     private var score: Int = 0
-    private var seconds = 30
+    private var seconds = 60
     private var timer = Timer()
     private var isTimerRunning = false
     private var questionNumber: Int = 1
     private var correctAnswer: Int = 0
     var difficultyStringFromSegue: String = ""
+    var difficultyColourFromSegue: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
@@ -30,7 +32,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var questionNumberLabel: UILabel!
     @IBOutlet var answerField: UITextField!
     @IBOutlet var difficultyLabel: UILabel!
-
+ 
     
     @IBAction func confirmExit() {
         if isTimerRunning {
@@ -83,8 +85,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
         var operand3: Character
         var operator1: String
         var operator2: String
-        var questionTypeArray: Array<String> = ["×", "÷"]
         var questionType: String
+        let questionTypeArray: Array<String> = ["×", "÷", "="]
 
         switch difficultyStringFromSegue {
         case "Underling":
@@ -96,7 +98,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
             correctAnswer = operand1 * operand2
 
         case "Intermediate":
-            questionType = questionTypeArray.randomElement()!
+            questionType = questionTypeArray[0...1].randomElement()!
             operand1 = Int.random(in: 0...13)
             operand2 = Int.random(in: 0...13)
             operand3 = "?"
@@ -112,7 +114,16 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
                 operand1 = operand2 * correctAnswer
                 
             }
+
+/*       case "Hard":
+            questionType = questionTypeArray.randomElement()!
+            switch questionType {
+            case "×":
+                
+ 
             
+            }
+            */
         default:
             operand1 = Int.random(in: 0...12)
             operand2 = Int.random(in: 0...12)

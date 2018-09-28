@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var colours: Array = [#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1), #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)]
+    var colours: Array = [#colorLiteral(red: 0.05098039216, green: 0.6784313725, blue: 0.07450980392, alpha: 1), #colorLiteral(red: 0.9960784314, green: 1, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 1, green: 0.6517646849, blue: 0.05509868973, alpha: 1), #colorLiteral(red: 0.9568627451, green: 0.1019607843, blue: 0.1019607843, alpha: 1), #colorLiteral(red: 0.8874525428, green: 0.2848415971, blue: 0.6302366853, alpha: 1)]
     
     let difficulties: Array<String> = ["Underling", "Intermediate", "Hard", "Insane", "Über"]
     
@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let destinationView = segue.destination as? QuestionViewController
         let indexPath = tablesTable.indexPathForSelectedRow!.row
         destinationView!.difficultyStringFromSegue = difficulties[indexPath]
+        destinationView!.difficultyColourFromSegue = colours[indexPath]
         
         if segue.identifier == "difficultySelected" {
             tablesTable.deselectRow(at: tablesTable.indexPathForSelectedRow!, animated: true)
@@ -43,8 +44,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell: UITableViewCell = tablesTable.dequeueReusableCell(withIdentifier: "cell")!
         
         cell.textLabel!.text = difficulties[indexPath.row]
-        cell.textLabel!.textColor = colours[indexPath.row % 2]
-        cell.textLabel?.font = UIFont.systemFont(ofSize: scaleText(80))
+        cell.textLabel!.textColor = colours[indexPath.row]
+        cell.textLabel!.textAlignment = NSTextAlignment.center
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: scaleText(80))
         
         return cell
     }

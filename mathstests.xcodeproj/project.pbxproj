@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306550E215EB4B1009C488B /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0306550D215EB4B1009C488B /* Keyboard.xib */; };
 		7F2F0F9B2119EB64009332D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F0F9A2119EB64009332D1 /* AppDelegate.swift */; };
 		7F2F0F9D2119EB64009332D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F0F9C2119EB64009332D1 /* ViewController.swift */; };
 		7F2F0FA02119EB64009332D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2F0F9E2119EB64009332D1 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0306550D215EB4B1009C488B /* Keyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		7F2F0F972119EB64009332D1 /* mathstests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathstests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2F0F9A2119EB64009332D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2F0F9C2119EB64009332D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				7F2F0F9A2119EB64009332D1 /* AppDelegate.swift */,
 				7F2F0F9C2119EB64009332D1 /* ViewController.swift */,
+				0306550D215EB4B1009C488B /* Keyboard.xib */,
 				7F2F0F9E2119EB64009332D1 /* Main.storyboard */,
 				7F2F0FAC2119EDAA009332D1 /* QuestionViewController.swift */,
 				7F2F0FA12119EB65009332D1 /* Assets.xcassets */,
@@ -127,6 +130,7 @@
 			files = (
 				7F2F0FA52119EB65009332D1 /* LaunchScreen.storyboard in Resources */,
 				7F2F0FA22119EB65009332D1 /* Assets.xcassets in Resources */,
+				0306550E215EB4B1009C488B /* Keyboard.xib in Resources */,
 				7F2F0FA02119EB64009332D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VCRXE4S7TR;
+				DEVELOPMENT_TEAM = CF48F6ZQ27;
 				INFOPLIST_FILE = mathstests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VCRXE4S7TR;
+				DEVELOPMENT_TEAM = CF48F6ZQ27;
 				INFOPLIST_FILE = mathstests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
