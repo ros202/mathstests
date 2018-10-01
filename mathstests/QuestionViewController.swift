@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class QuestionViewController: UIViewController, UITextFieldDelegate {
+class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,10 @@ class QuestionViewController: UIViewController, UITextFieldDelegate {
             answerField.becomeFirstResponder() 
             runTimer()
             generateNewQuestion()
+            
+            let keyboardView = KeyboardViewController()
+            keyboardView.delegate = self  // the vc will be notified by the keyboard whenever a key is tapped
+            answerField.inputView = keyboardView
         }
     }
     

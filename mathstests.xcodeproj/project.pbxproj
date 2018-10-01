@@ -14,6 +14,8 @@
 		7F2F0FA22119EB65009332D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2F0FA12119EB65009332D1 /* Assets.xcassets */; };
 		7F2F0FA52119EB65009332D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2F0FA32119EB65009332D1 /* LaunchScreen.storyboard */; };
 		7F2F0FAD2119EDAA009332D1 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F0FAC2119EDAA009332D1 /* QuestionViewController.swift */; };
+		7FD22520216280B9005584FE /* Keyboard2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2251F216280B9005584FE /* Keyboard2.xib */; };
+		7FD22522216286D1005584FE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD22521216286D1005584FE /* KeyboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7F2F0FA42119EB65009332D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F2F0FA62119EB65009332D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F2F0FAC2119EDAA009332D1 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		7FD2251F216280B9005584FE /* Keyboard2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard2.xib; sourceTree = "<group>"; };
+		7FD22521216286D1005584FE /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				7F2F0F9A2119EB64009332D1 /* AppDelegate.swift */,
 				7F2F0F9C2119EB64009332D1 /* ViewController.swift */,
 				0306550D215EB4B1009C488B /* Keyboard.xib */,
+				7FD2251F216280B9005584FE /* Keyboard2.xib */,
 				7F2F0F9E2119EB64009332D1 /* Main.storyboard */,
 				7F2F0FAC2119EDAA009332D1 /* QuestionViewController.swift */,
+				7FD22521216286D1005584FE /* KeyboardViewController.swift */,
 				7F2F0FA12119EB65009332D1 /* Assets.xcassets */,
 				7F2F0FA32119EB65009332D1 /* LaunchScreen.storyboard */,
 				7F2F0FA62119EB65009332D1 /* Info.plist */,
@@ -128,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD22520216280B9005584FE /* Keyboard2.xib in Resources */,
 				7F2F0FA52119EB65009332D1 /* LaunchScreen.storyboard in Resources */,
 				7F2F0FA22119EB65009332D1 /* Assets.xcassets in Resources */,
 				0306550E215EB4B1009C488B /* Keyboard.xib in Resources */,
@@ -145,6 +152,7 @@
 				7F2F0F9D2119EB64009332D1 /* ViewController.swift in Sources */,
 				7F2F0F9B2119EB64009332D1 /* AppDelegate.swift in Sources */,
 				7F2F0FAD2119EDAA009332D1 /* QuestionViewController.swift in Sources */,
+				7FD22522216286D1005584FE /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
