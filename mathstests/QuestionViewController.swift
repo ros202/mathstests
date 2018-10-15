@@ -15,6 +15,10 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         super.viewDidLoad()
         self.difficultyLabel.text = difficultyStringFromSegue
         self.difficultyLabel.textColor = difficultyColourFromSegue
+        
+        let keyboardView = KeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 300))
+        keyboardView.delegate = self  // the vc will be notified by the keyboard whenever a key is tapped
+        answerField.inputView = keyboardView
     }
     
     private var score: Int = 0
@@ -51,9 +55,15 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         }
     }
     
+    func keyWasTapped(character: String) {
+        answerField.insertText(character)
+    }
+    
+    
     func close(){
         dismiss(animated: true, completion: nil)
     }
+
     
     @IBAction func startButtonTapped() {
         if !self.isTimerRunning {
@@ -64,10 +74,6 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
             answerField.becomeFirstResponder() 
             runTimer()
             generateNewQuestion()
-            
-            let keyboardView = KeyboardViewController()
-            keyboardView.delegate = self  // the vc will be notified by the keyboard whenever a key is tapped
-            answerField.inputView = keyboardView
         }
     }
     
@@ -86,8 +92,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
     func generateNewQuestion(){
         var calc1: Int
         var calc2: Int
-        var operand1: String
-        var operand2: String
+        var operand1: String = ""
+        var operand2: String = ""
         var operand3: Character
         var operator1: String
         var operator2: String
