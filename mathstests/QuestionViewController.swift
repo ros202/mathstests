@@ -84,57 +84,78 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
     }
 
     func generateNewQuestion(){
-        var operand1: Int
-        var operand2: Int
+        var calc1: Int
+        var calc2: Int
+        var operand1: String
+        var operand2: String
         var operand3: Character
         var operator1: String
         var operator2: String
         var questionType: String
-        let questionTypeArray: Array<String> = ["×", "÷", "="]
+        let questionTypeArray: Array<String> = ["×", "÷"]
 
         switch difficultyStringFromSegue {
         case "Underling":
-            operand1 = Int.random(in: 0...12)
-            operand2 = Int.random(in: 0...12)
+            calc1 = Int.random(in: 0...12)
+            calc2 = Int.random(in: 0...12)
+            correctAnswer = calc1 * calc2
+            operand1 = String(calc1)
+            operand2 = String(calc2)
             operand3 = "?"
             operator1 = "×"
             operator2 = "="
-            correctAnswer = operand1 * operand2
 
         case "Intermediate":
             questionType = questionTypeArray[0...1].randomElement()!
-            operand1 = Int.random(in: 0...13)
-            operand2 = Int.random(in: 0...13)
+            calc1 = Int.random(in: 0...13)
+            calc2 = Int.random(in: 0...13)
             operand3 = "?"
             operator1 = questionType
             operator2 = "="
             if questionType == "×" {
-                operand1 = Int.random(in: 0...13)
-                operand2 = Int.random(in: 0...13)
-                correctAnswer = operand1 * operand2
+                correctAnswer = calc1 * calc2
+                operand1 = String(calc1)
+                operand2 = String(calc2)
             } else if questionType == "÷" {
                 correctAnswer = Int.random(in: 0...13)
-                operand2 = Int.random(in: 1...13)
-                operand1 = operand2 * correctAnswer
+                calc1 = calc2 * correctAnswer
+                operand1 = String(calc1)
+                operand2 = String(calc2)
                 
             }
 
-/*       case "Hard":
+       /*case "Hard":
             questionType = questionTypeArray.randomElement()!
             switch questionType {
+            case "?":
+                questionType = questionTypeArray[0...1].randomElement()!
+                operator1 = questionType
+                calc1 = Int.random(in: 0...13)
+                
+                if questionType == "×"{
+                    correctAnswer = Int.random(in: 0...13)
+                    calc2 = calc1 * calc2
+                    operand1 = String(calc1)
+                    operand2 = "?"
+                    operand3 =
+                }
             case "×":
                 
- 
+            case "÷":
+                
             
             }
             */
+            
         default:
-            operand1 = Int.random(in: 0...12)
-            operand2 = Int.random(in: 0...12)
+            calc1 = Int.random(in: 0...12)
+            calc2 = Int.random(in: 0...12)
+            correctAnswer = calc1 * calc2
+            operand1 = String(calc1)
+            operand2 = String(calc2)
             operand3 = "?"
             operator1 = "×"
             operator2 = "="
-            correctAnswer = operand1 * operand2
         }
         
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2) \(operand3)"
