@@ -56,7 +56,19 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
     }
     
     func keyWasTapped(character: String) {
-        answerField.insertText(character)
+        
+        if let input: Int = Int(character) {
+            answerField.insertText(character)
+        } else if character == "←" {
+            answerField.deleteBackward()
+        } else if character == "⏎" {
+            answerTyped(self.answerField)
+            answerField.text = ""
+        }
+        
+        /// Let's add some cases for return and delete...
+        
+    /// perhaps check that character count is < 8 or so...?
     }
     
     

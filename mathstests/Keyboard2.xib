@@ -15,84 +15,84 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-G8-43y">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-G8-43y" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="130.5" y="8" width="114" height="65"/>
                     <state key="normal" title="2"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="mI9-pk-5zM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9d-ih-7oE">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9d-ih-7oE" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="252.5" y="8" width="114.5" height="65"/>
                     <state key="normal" title="3"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="3Kr-U7-IXi"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8l-F4-4WG">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8l-F4-4WG" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="8" y="81" width="114.5" height="65"/>
                     <state key="normal" title="4"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="KX3-p9-GAU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="got-Wc-ELi">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="got-Wc-ELi" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="130.5" y="81" width="114" height="65"/>
                     <state key="normal" title="5"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="Qun-zH-t4F"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-oH-1s6">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-oH-1s6" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="252.5" y="81" width="114.5" height="65"/>
                     <state key="normal" title="6"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="Mg1-pG-M2i"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-yO-3zL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-yO-3zL" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="8" y="154" width="114.5" height="65"/>
                     <state key="normal" title="7"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="SRU-SC-ubr"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-5D-lQt">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-5D-lQt" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="130.5" y="154" width="114" height="65"/>
                     <state key="normal" title="8"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="KI0-D1-Ubd"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urT-Z2-Oh5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urT-Z2-Oh5" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="252.5" y="154" width="114.5" height="65"/>
                     <state key="normal" title="9"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="LGO-0i-Nyk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-Hq-hC2">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-Hq-hC2" customClass="DeleteKeyButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="8" y="227" width="114.5" height="65"/>
-                    <state key="normal" title="del"/>
+                    <state key="normal" title="←"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="4eW-4N-BHH"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiV-zL-Xpe">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiV-zL-Xpe" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="130.5" y="227" width="114" height="65"/>
                     <state key="normal" title="0"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="cBG-Gh-zB4"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-Ij-faR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-Ij-faR" customClass="ReturnButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="252.5" y="227" width="114.5" height="65"/>
                     <state key="normal" title="⏎"/>
                     <connections>
                         <action selector="keyTappedWithSender:" destination="-2" eventType="touchUpInside" id="Gz8-K3-36l"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIE-9x-9wM">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIE-9x-9wM" customClass="KeyboardButton" customModule="mathstests" customModuleProvider="target">
                     <rect key="frame" x="8" y="8" width="114.5" height="65"/>
                     <state key="normal" title="1"/>
                     <connections>
@@ -100,7 +100,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="jIE-9x-9wM" firstAttribute="height" secondItem="S9d-ih-7oE" secondAttribute="height" id="0C5-Gl-yw9"/>
                 <constraint firstItem="jIE-9x-9wM" firstAttribute="width" secondItem="urT-Z2-Oh5" secondAttribute="width" id="1Ch-aV-lbw"/>
