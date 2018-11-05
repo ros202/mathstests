@@ -9,6 +9,23 @@
 import UIKit
 import Foundation
 
+/// Disable pasting in UITextField and disable Shortcut Bar in UITextField keyboard
+public extension UITextField {
+    
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return action == #selector(UIResponderStandardEditActions.cut) || action == #selector(UIResponderStandardEditActions.copy)
+    }
+    
+    public func hideAssistantBar()
+    {
+        if #available(iOS 9.0, *) {
+            let assistant = self.inputAssistantItem;
+            assistant.leadingBarButtonGroups = [];
+            assistant.trailingBarButtonGroups = [];
+        }
+    }
+}
+
 class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDelegate {
 
     override func viewDidLoad() {
@@ -19,6 +36,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         let keyboardView = KeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 300))
         keyboardView.delegate = self  // the vc will be notified by the keyboard whenever a key is tapped
         answerField.inputView = keyboardView
+        self.answerField.hideAssistantBar()
+        self.answerField.isEnabled = false
     }
     
     private var score: Int = 0
@@ -57,13 +76,19 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
     
     func keyWasTapped(character: String) {
         
-        if let input: Int = Int(character) {
-            answerField.insertText(character)
-        } else if character == "←" {
+        if character == "←" {
             answerField.deleteBackward()
         } else if character == "⏎" {
             answerTyped(self.answerField)
             answerField.text = ""
+        } else if answerField.text!.count < 8 {
+            if let input: Int = Int(character) {
+                answerField.insertText(character)
+            } else {
+                answerField.insertText("")
+            }
+        } else {
+            answerField.insertText("")
         }
         
         /// Let's add some cases for return and delete...
@@ -83,7 +108,9 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
             scoreLabel.text = "Score: \(score)"
             self.questionNumber = 1
             questionNumberLabel.text = "Question: \(questionNumber)"
-            answerField.becomeFirstResponder() 
+            
+            self.answerField.isEnabled = true
+            answerField.becomeFirstResponder()
             runTimer()
             generateNewQuestion()
         }
