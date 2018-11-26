@@ -30,24 +30,27 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.difficultyLabel.text = difficultyStringFromSegue
-        self.difficultyLabel.textColor = difficultyColourFromSegue
+        self.difficultyLabel.text = level.title
+        self.difficultyLabel.textColor = level.colour
+        self.seconds = level.timeAllowed
         
         let keyboardView = KeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 300))
         keyboardView.delegate = self  // the vc will be notified by the keyboard whenever a key is tapped
         answerField.inputView = keyboardView
         self.answerField.hideAssistantBar()
         self.answerField.isEnabled = false
+        
+        
     }
     
+    public var level: Level = Level()
+    
     private var score: Int = 0
-    private var seconds = 60
+    private var seconds: Int = 60
     private var timer = Timer()
     private var isTimerRunning = false
     private var questionNumber: Int = 1
     private var correctAnswer: Int = 0
-    var difficultyStringFromSegue: String = ""
-    var difficultyColourFromSegue: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
@@ -105,8 +108,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
     @IBAction func startButtonTapped() {
         if !self.isTimerRunning {
             score = 0
-            scoreLabel.text = "Score: \(score)"
             self.questionNumber = 1
+            scoreLabel.text = "\(score)/\(questionNumber-1)"
             questionNumberLabel.text = "Question: \(questionNumber)"
             
             self.answerField.isEnabled = true
@@ -120,8 +123,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         let givenAnswer = textField.text
         if markAnswer(answer: givenAnswer ?? "") {
             self.score += 1
-            scoreLabel.text = "Score: \(score)"
         }
+        scoreLabel.text = "\(score)/\(questionNumber)"
         self.questionNumber += 1
         questionNumberLabel.text = "Question: \(questionNumber)"
         generateNewQuestion()
@@ -139,7 +142,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         var questionType: String
         let questionTypeArray: Array<String> = ["×", "÷"]
 
-        switch difficultyStringFromSegue {
+        switch level.title {
         case "Underling":
             calc1 = Int.random(in: 0...12)
             calc2 = Int.random(in: 0...12)
@@ -225,7 +228,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         if self.seconds < 1 {
             timer.invalidate()
             showAlert()
-            self.seconds = 300
+            self.seconds = level.timeAllowed
             
         } else {
             self.seconds -= 1
