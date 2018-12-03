@@ -12,7 +12,7 @@ import Foundation
 /// Disable pasting in UITextField and disable Shortcut Bar in UITextField keyboard
 public extension UITextField {
     
-    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return action == #selector(UIResponderStandardEditActions.cut) || action == #selector(UIResponderStandardEditActions.copy)
     }
     
@@ -86,7 +86,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
             answerField.text = ""
         } else if answerField.text!.count < 8 {
             if let input: Int = Int(character) {
-                answerField.insertText(character)
+                answerField.insertText(String(input))
             } else {
                 answerField.insertText("")
             }
