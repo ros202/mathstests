@@ -12,11 +12,37 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var levels: Array<Level> = [
-    Level(title: "Underling", colour: #colorLiteral(red: 0.05098039216, green: 0.6784313725, blue: 0.07450980392, alpha: 1)),
-    Level(title: "Intermediate", colour: #colorLiteral(red: 0.9960784314, green: 1, blue: 0.2666666667, alpha: 1)),
-    Level(title: "Hard", colour: #colorLiteral(red: 1, green: 0.6517646849, blue: 0.05509868973, alpha: 1)),
-    Level(title: "Insane", colour: #colorLiteral(red: 0.9568627451, green: 0.1019607843, blue: 0.1019607843, alpha: 1)),
-    Level(title: "Über", colour: #colorLiteral(red: 0.8874525428, green: 0.2848415971, blue: 0.6302366853, alpha: 1))
+        Level(
+            title: "Underling",
+            colour: #colorLiteral(red: 0.05098039216, green: 0.6784313725, blue: 0.07450980392, alpha: 1),
+            availableQuestions: [.SimpleTimes],
+            upperBound: 10
+        ),
+        Level(
+            title: "Intermediate",
+            colour: #colorLiteral(red: 0.9960784314, green: 1, blue: 0.2666666667, alpha: 1),
+            availableQuestions: [.SimpleTimes],
+            upperBound: 13
+        ),
+        Level(
+            title: "Hard",
+            colour: #colorLiteral(red: 1, green: 0.6517646849, blue: 0.05509868973, alpha: 1),
+            availableQuestions: [.SimpleTimes, .SimpleDivide],
+            upperBound: 13
+        ),
+        Level(
+            title: "Insane",
+            colour: #colorLiteral(red: 0.9568627451, green: 0.1019607843, blue: 0.1019607843, alpha: 1),
+            availableQuestions: [.SimpleTimes, .SimpleDivide],
+            upperBound: 15
+        ),
+        Level(
+            title: "Über",
+            colour: #colorLiteral(red: 0.8874525428, green: 0.2848415971, blue: 0.6302366853, alpha: 1),
+            availableQuestions: [.SimpleTimes, .SimpleDivide],
+            upperBound: 20
+        ),
+        
     ]
     
     //var colours: Array = [#colorLiteral(red: 0.05098039216, green: 0.6784313725, blue: 0.07450980392, alpha: 1), #colorLiteral(red: 0.9960784314, green: 1, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 1, green: 0.6517646849, blue: 0.05509868973, alpha: 1), #colorLiteral(red: 0.9568627451, green: 0.1019607843, blue: 0.1019607843, alpha: 1), #colorLiteral(red: 0.8874525428, green: 0.2848415971, blue: 0.6302366853, alpha: 1)]

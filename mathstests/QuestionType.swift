@@ -30,7 +30,7 @@ class QuestionType {
     
     /// Other properties
     var questionText: String = ""
-    var correctAnswer: Int
+    var correctAnswer: Int = 0
     
     func setupQuestion() {
         switch self.description {
@@ -44,14 +44,14 @@ class QuestionType {
             let operator1 = "×"
             let operator2 = "="
             self.questionText = "\(operand1) \(operator1) \(operand2) \(operator2) \(operand3)"
-        default :
+        case .SimpleDivide:
             let calc1 = Int.random(in: interval)
             let calc2 = Int.random(in: interval)
-            self.correctAnswer = calc1 * calc2
-            let operand1 = String(calc1)
+            self.correctAnswer = calc1
+            let operand1 = String(calc1*calc2)
             let operand2 = String(calc2)
             let operand3 = "?"
-            let operator1 = "×"
+            let operator1 = "÷"
             let operator2 = "="
             self.questionText = "\(operand1) \(operator1) \(operand2) \(operator2) \(operand3)"
         }
