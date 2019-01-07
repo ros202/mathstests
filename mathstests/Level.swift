@@ -30,6 +30,10 @@ class Level {
         self.availableQuestions = availableQuestions
         self.questionCount = questionCount
         self.upperBound = upperBound
+        
+        /// Other Methods you wish to run upon initialisation
+        self.questions = makeQuestions(questionTypes: self.availableQuestions)
+        
     }
     
     /// Properties which can initialised
@@ -41,12 +45,15 @@ class Level {
     public var upperBound: Int = 12
     
     /// Other Properties which can be set/modified from outside
+    public var questions: Array<QuestionType> = []
     
     /// Instance Methods
-    func makeQuestions(questions: Array<Description>) -> Array<QuestionType> {
+    
+    /// Makes a list of questions for this level
+    func makeQuestions(questionTypes: Array<Description>) -> Array<QuestionType> {
         var questionsToBeReturned: Array<QuestionType> = []
-        for question in 1...self.questionCount {
-            questionsToBeReturned[question] = QuestionType(upperBound: self.upperBound, description: questions.randomElement()!)
+        for _ in 0..<self.questionCount {
+            questionsToBeReturned.append(QuestionType(upperBound: self.upperBound, description: questionTypes.randomElement()!))
         }
         return questionsToBeReturned
     }

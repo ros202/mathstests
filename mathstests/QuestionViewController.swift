@@ -115,7 +115,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
             self.answerField.isEnabled = true
             answerField.becomeFirstResponder()
             runTimer()
-            generateNewQuestion()
+            questionLabel.text = level.questions[questionNumber-1].questionText
+            
         }
     }
     
@@ -127,11 +128,12 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         scoreLabel.text = "\(score)/\(questionNumber)"
         self.questionNumber += 1
         questionNumberLabel.text = "Question: \(questionNumber)"
-        generateNewQuestion()
         textField.text = ""
+        questionLabel.text = level.questions[questionNumber-1].questionText
+        
     }
 
-    func generateNewQuestion(){
+ /*   func generateNewQuestion(){
         var calc1: Int
         var calc2: Int
         var operand1: String = ""
@@ -207,7 +209,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, KeyboardDel
         }
         
         questionLabel.text = "\(operand1) \(operator1) \(operand2) \(operator2) \(operand3)"
-    }
+    } */
     
     func markAnswer(answer: String) -> Bool {
         return answer == String(correctAnswer)
